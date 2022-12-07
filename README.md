@@ -1,2 +1,2 @@
-# terraform-cloud-vs-example
+# terraform-cloud-vcs-example
 Example for Terraform Cloud VCS
