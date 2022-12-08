@@ -21,7 +21,7 @@ module "hello_world_app" {
 
   environment            = var.environment
   db_remote_state_workspace = var.db_remote_state_workspace
-  db_remote_state_org    = var.db_remote_state_org
+  db_remote_state_org    = var.db_remote_state_organization
 
   instance_type      = "t2.micro"
   min_size           = 2
