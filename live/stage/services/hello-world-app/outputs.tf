@@ -16,7 +16,7 @@ output "org" {
 }
 
 output "port" {
-  value       = data.tfe_outputs.db.values.port
+  value       = data.tfe_outputs.baza.values.port
   description = "Port for DB"
 }
 
