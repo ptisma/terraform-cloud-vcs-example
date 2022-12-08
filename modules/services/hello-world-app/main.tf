@@ -75,7 +75,8 @@ resource "aws_lb_listener_rule" "asg" {
   }
 }
 
-data "terraform_remote_state" "db" {
+# data "terraform_remote_state" "db" {
+  data "tfe_outputs" "db" {
   # backend = "s3"
 
   # config = {
@@ -83,14 +84,8 @@ data "terraform_remote_state" "db" {
   #   key    = var.db_remote_state_key
   #   region = "us-east-2"
   # }
-  backend = "remote"
-
-  config = {
-    organization = "hashicorp"
-    workspaces = {
-      name = "terraform-cloud-vcs-example-stage-mysql"
-    }
-  }
+  organization = "tisma-lab"
+  workspace = "terraform-cloud-vcs-example-stage-hello-world-app"
 }
 
 data "aws_vpc" "default" {
