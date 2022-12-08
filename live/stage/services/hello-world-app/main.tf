@@ -20,8 +20,8 @@ module "hello_world_app" {
   server_text = var.server_text
 
   environment            = var.environment
-  # db_remote_state_bucket = var.db_remote_state_bucket
-  # db_remote_state_key    = var.db_remote_state_key
+  db_remote_state_workspace = var.db_remote_state_workspace
+  db_remote_state_org    = var.db_remote_state_org
 
   instance_type      = "t2.micro"
   min_size           = 2
@@ -38,9 +38,4 @@ data "aws_ami" "ubuntu" {
     name   = "name"
     values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
   }
-}
-
-data "tfe_outputs" "baza" {
-  organization = "tisma-lab"
-  workspace = "terraform-cloud-vcs-example-stage-mysql"
 }

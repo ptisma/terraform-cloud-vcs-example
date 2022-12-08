@@ -3,15 +3,15 @@
 # You must provide a value for each of these parameters.
 # ---------------------------------------------------------------------------------------------------------------------
 
-# variable "db_remote_state_bucket" {
-#   description = "The name of the S3 bucket for the database's remote state"
-#   type        = string
-# }
+variable "db_remote_state_workspace" {
+  description = "The name of the Terraform Cloud workspace for the database"
+  type        = string
+}
 
-# variable "db_remote_state_key" {
-#   description = "The path for the database's remote state in S3"
-#   type        = string
-# }
+variable "db_remote_state_organization" {
+  description = "The name of the Terraform Cloud organization where the database workspace resides"
+  type        = string
+}
 
 # ---------------------------------------------------------------------------------------------------------------------
 # OPTIONAL PARAMETERS

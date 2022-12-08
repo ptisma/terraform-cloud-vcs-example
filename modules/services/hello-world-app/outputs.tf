@@ -12,14 +12,3 @@ output "instance_security_group_id" {
   value       = module.asg.instance_security_group_id
   description = "The ID of the EC2 Instance Security Group"
 }
-
-output "values" {
-  value       = data.tfe_outputs.db.values
-  description = "test"
-  sensitive = true
-}
-
-output "org" {
-  value       = data.tfe_organization.foo
-  description = "test"
-}

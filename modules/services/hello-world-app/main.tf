@@ -19,10 +19,10 @@ module "asg" {
 
   user_data     = templatefile("${path.module}/user-data.sh", {
     server_port = var.server_port
-    # db_address  = data.tfe_outputs.db.values.address
-    # db_port     = data.tfe_outputs.db.values.port
-    db_address  = "test1"
-    db_port     = "test2"
+    db_address  = data.tfe_outputs.db.values.address
+    db_port     = data.tfe_outputs.db.values.port
+    # db_address  = "test1"
+    # db_port     = "test2"
     server_text = var.server_text
   })
 
@@ -77,10 +77,6 @@ resource "aws_lb_listener_rule" "asg" {
   }
 }
 
-data "tfe_organization" "foo" {
-  name = "tisma-lab"
-}
-
 # data "terraform_remote_state" "db" {
   data "tfe_outputs" "db" {
   # backend = "s3"
@@ -90,8 +86,8 @@ data "tfe_organization" "foo" {
   #   key    = var.db_remote_state_key
   #   region = "us-east-2"
   # }
-  organization = "tisma-lab"
-  workspace = "terraform-cloud-vcs-example-stage-mysql"
+  organization = var.db_remote_state_organization
+  workspace = var.db_remote_state_workspace
 }
 
 data "aws_vpc" "default" {

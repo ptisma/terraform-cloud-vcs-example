@@ -23,15 +23,15 @@ variable "enable_autoscaling" {
   type        = bool
 }
 
-# variable "db_remote_state_bucket" {
-#   description = "The name of the S3 bucket used for the database's remote state storage"
-#   type        = string
-# }
+variable "db_remote_state_workspace" {
+  description = "The name of the Terraform Cloud workspace used for the database's remote state storage"
+  type        = string
+}
 
-# variable "db_remote_state_key" {
-#   description = "The name of the key in the S3 bucket used for the database's remote state storage"
-#   type        = string
-# }
+variable "db_remote_state_organization" {
+  description = "The name of Terraform Cloud organization used for the database's remote state storage"
+  type        = string
+}
 
 # ---------------------------------------------------------------------------------------------------------------------
 # OPTIONAL PARAMETERS
