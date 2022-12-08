@@ -16,6 +16,7 @@ output "instance_security_group_id" {
 output "values" {
   value       = data.tfe_outputs.db
   description = "test"
+  sensitive = true
 }
 
 output "org" {
