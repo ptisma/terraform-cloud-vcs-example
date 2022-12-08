@@ -39,3 +39,8 @@ data "aws_ami" "ubuntu" {
     values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
   }
 }
+
+data "tfe_outputs" "baza" {
+  organization = "tisma-lab"
+  workspace = "terraform-cloud-vcs-example-stage-mysql"
+}

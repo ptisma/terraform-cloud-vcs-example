@@ -14,3 +14,10 @@ output "org" {
   value       = module.hello_world_app.org
   description = "test"
 }
+
+output "port" {
+  value       = data.tfe_outputs.db.values.port
+  description = "Port for DB"
+}
+
+
