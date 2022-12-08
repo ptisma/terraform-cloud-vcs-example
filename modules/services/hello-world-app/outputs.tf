@@ -14,11 +14,11 @@ output "instance_security_group_id" {
 }
 
 output "values" {
-  value       = nonsensitive(data.tfe_outputs.db)
+  value       = data.tfe_outputs.db
   description = "test"
 }
 
 output "org" {
-  value       = nonsensitive(data.tfe_organization.foo)
+  value       = data.tfe_organization.foo
   description = "test"
 }
