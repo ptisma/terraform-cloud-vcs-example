@@ -6,6 +6,7 @@ output "alb_dns_name" {
 output "values" {
   value       = module.hello_world_app.values
   description = "test"
+  sensitive = true
 }
 
 output "org" {
