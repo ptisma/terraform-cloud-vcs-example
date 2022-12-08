@@ -76,12 +76,20 @@ resource "aws_lb_listener_rule" "asg" {
 }
 
 data "terraform_remote_state" "db" {
-  backend = "s3"
+  # backend = "s3"
+
+  # config = {
+  #   bucket = var.db_remote_state_bucket
+  #   key    = var.db_remote_state_key
+  #   region = "us-east-2"
+  # }
+  backend = "remote"
 
   config = {
-    bucket = var.db_remote_state_bucket
-    key    = var.db_remote_state_key
-    region = "us-east-2"
+    organization = "hashicorp"
+    workspaces = {
+      name = "terraform-cloud-vcs-example-stage-mysql"
+    }
   }
 }
 

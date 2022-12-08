@@ -20,8 +20,8 @@ module "hello_world_app" {
   server_text = var.server_text
 
   environment            = var.environment
-  db_remote_state_bucket = var.db_remote_state_bucket
-  db_remote_state_key    = var.db_remote_state_key
+  # db_remote_state_bucket = var.db_remote_state_bucket
+  # db_remote_state_key    = var.db_remote_state_key
 
   instance_type      = "t2.micro"
   min_size           = 2
