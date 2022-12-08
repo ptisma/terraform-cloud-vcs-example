@@ -4,7 +4,6 @@ output "alb_dns_name" {
 }
 
 output "test" {
-  value       = module.hello_world_app.tfe_outputs
+  value       = nonsensitive(module.hello_world_app.tfe_outputs)
   description = "test"
-  sensitive = true
 }
