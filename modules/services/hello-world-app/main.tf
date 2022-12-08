@@ -85,7 +85,7 @@ resource "aws_lb_listener_rule" "asg" {
   #   region = "us-east-2"
   # }
   organization = "tisma-lab"
-  workspace = "terraform-cloud-vcs-example-stage-hello-world-app"
+  workspace = "terraform-cloud-vcs-example-stage-mysql"
 }
 
 data "aws_vpc" "default" {
