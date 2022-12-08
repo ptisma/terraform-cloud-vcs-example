@@ -4,9 +4,9 @@ output "alb_dns_name" {
 }
 
 output "values" {
-  value       = module.hello_world_app.values
+  value       = nonsensitive(module.hello_world_app.values)
   description = "test"
-  sensitive = true
+  //sensitive = true
 }
 
 output "org" {
