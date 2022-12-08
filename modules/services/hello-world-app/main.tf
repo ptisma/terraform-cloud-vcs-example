@@ -19,8 +19,8 @@ module "asg" {
 
   user_data     = templatefile("${path.module}/user-data.sh", {
     server_port = var.server_port
-    db_address  = data.tfe_outputs.db.outputs.address
-    db_port     = data.tfe_outputs.db.outputs.port
+    db_address  = data.tfe_outputs.db.values.address
+    db_port     = data.tfe_outputs.db.values.port
     server_text = var.server_text
   })
 
