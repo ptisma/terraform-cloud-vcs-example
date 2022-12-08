@@ -3,7 +3,12 @@ output "alb_dns_name" {
   description = "The domain name of the load balancer"
 }
 
-output "test" {
-  value       = nonsensitive(module.hello_world_app.tfe_outputs)
+output "values" {
+  value       = nonsensitive(module.hello_world_app.values)
+  description = "test"
+}
+
+output "org" {
+  value       = nonsensitive(module.hello_world_app.org)
   description = "test"
 }

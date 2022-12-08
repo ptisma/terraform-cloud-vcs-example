@@ -77,6 +77,10 @@ resource "aws_lb_listener_rule" "asg" {
   }
 }
 
+data "tfe_organization" "foo" {
+  name = "tisma-lab"
+}
+
 # data "terraform_remote_state" "db" {
   data "tfe_outputs" "db" {
   # backend = "s3"
