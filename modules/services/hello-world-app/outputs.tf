@@ -14,7 +14,7 @@ output "instance_security_group_id" {
 }
 
 output "values" {
-  value       = nonsensitive(data.tfe_outputs.db.values)
+  value       = nonsensitive(data.tfe_outputs.db)
   description = "test"
 }
 
